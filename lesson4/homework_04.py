@@ -41,25 +41,25 @@ print(adventures_of_tom_sawyer)
 # task 04
 """ Виведіть, скількі разів у тексті зустрічається літера "h"
 """
-print(adventures_of_tom_sawyer.count("h"))
+print(f"'h' count: {adventures_of_tom_sawyer.count('h')}")
 
 # task 05
 """ Виведіть, скільки слів у тексті починається з Великої літери?
 """
 arr_adventures_of_tom_sawyer = adventures_of_tom_sawyer.split()
-capitalized_count = 0
+title_count = 0
 
 for i in arr_adventures_of_tom_sawyer:
-    if i[0].isupper():
-        capitalized_count += 1
+    if i.istitle():
+        title_count += 1
 
-print(capitalized_count)
+print(f"Title count: {title_count}")
 
 # task 06
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
 """
-index = adventures_of_tom_sawyer.find("Tom", 1)  # мені відомо про індекс 1-го входження слова Том (0 індекс), тому для знаходження 2-го входження достатньо виставити індекс > 0
-print(index)
+first_index = adventures_of_tom_sawyer.find("Tom")
+print(f"The second index of 'Tom' is: {adventures_of_tom_sawyer.find('Tom', first_index + 1)}")
 
 # task 07
 """ Розділіть змінну adventures_of_tom_sawyer по кінцю речення.
