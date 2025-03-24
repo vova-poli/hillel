@@ -29,7 +29,7 @@ print(alice_in_wonderland)
 """
 black_sea_area_size = 436402
 azov_sea_area_size = 37800
-print(black_sea_area_size + azov_sea_area_size)
+print(f"Total area is {black_sea_area_size + azov_sea_area_size}")
 
 # task 05
 """
@@ -53,7 +53,7 @@ print(f"first depot = {first_depot_amount}, second depot = {second_depot_amount}
 """
 months_amount = 18
 monthly_payment = 1179
-print(months_amount * monthly_payment)
+print(f"Total price is {months_amount * monthly_payment}")
 
 # task 07
 """
@@ -62,14 +62,12 @@ a) 8019 : 8     d) 7248 : 6
 b) 9907 : 9     e) 7128 : 5
 c) 2789 : 5     f) 19224 : 9
 """
-print(
-    8019 % 8,
-    9907 % 9,
-    2789 % 5,
-    7248 % 6,
-    7128 % 5,
-    19224 % 9
-)
+print(f"8019 % 8 = {8019 % 8}")
+print(f"9907 % 9 = {9907 % 9}")
+print(f"2789 % 5 = {2789 % 5}")
+print(f"7248 % 6 = {7248 % 6}")
+print(f"7128 % 5 = {7128 % 5}")
+print(f"19224 % 9 = {19224 % 9}")
 
 # task 08
 """
@@ -88,7 +86,7 @@ pizza_medium = 2 * 218
 juice = 4 * 35
 cake = 1 * 350
 water = 3 * 21
-print(pizza_large + pizza_medium + juice + cake + water)
+print(f"Order total is {pizza_large + pizza_medium + juice + cake + water}")
 
 
 # task 09
@@ -101,7 +99,7 @@ print(pizza_large + pizza_medium + juice + cake + water)
 photo_amount = 232
 page_limit = 8
 page_amount = math.ceil(photo_amount / page_limit)  # math.ceil() у разі, якщо результатом ділення кількості фото на ліміт фотографій буде не ціле число
-print(page_amount)
+print(f"Total pages: {page_amount}")
 
 # task 10
 """
@@ -119,4 +117,5 @@ petrol_consumption_per_100km = 9
 tank_capacity = 48
 total_petrol_needed = (distance / 100) * petrol_consumption_per_100km
 refill_count = math.ceil(total_petrol_needed / tank_capacity)  # Округлення до цілого числа (бо заїхати на заправку доведеться цілу кількість разів)
-print(refill_count)
+print(f"Total petrol needed: {total_petrol_needed}")
+print(f"Refills needed: {refill_count}")
