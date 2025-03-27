@@ -30,6 +30,10 @@ print(people_records)
 indexes = [6, 10, 13]
 
 for i in indexes:
-  if people_records[i][2] >= 30:
-    print(f"Person with index {i} is >= 30 years old. Data: {people_records[i]}")
+    if people_records[i][2] < 30:
+        print("Not all people in given indexes [6, 10, 13] are older than 30")
+        break
+else:
+    print("All people in given indexes [6, 10, 13] are older than 30")
+
 
