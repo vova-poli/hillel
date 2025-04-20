@@ -19,6 +19,14 @@ class TestFilterByString(unittest.TestCase):
     def test_nested_list(self):
         self.assertEqual(filter_by_string(["a", ["b"], "c"]), ["a", "c"])  # only top-level str
 
+    def test_none_input(self):
+        with self.assertRaises(TypeError):
+            filter_by_string(None)
+
+    def test_int_instead_of_list(self):
+        with self.assertRaises(TypeError):
+            filter_by_string(123)
+
 
 class TestSumOfEven(unittest.TestCase):
 
@@ -36,6 +44,14 @@ class TestSumOfEven(unittest.TestCase):
 
     def test_empty_list(self):
         self.assertEqual(sum_of_even([]), 0)
+
+    def test_non_numeric_values(self):
+        with self.assertRaises(TypeError):
+            sum_of_even(["a", "b", "c"])
+
+    def test_mixed_types_with_non_integers(self):
+        with self.assertRaises(TypeError):
+            sum_of_even([2, 4, "six", 8])
 
 
 class TestArithmeticMean(unittest.TestCase):
@@ -60,6 +76,14 @@ class TestArithmeticMean(unittest.TestCase):
 
     def test_zeros(self):
         self.assertEqual(arithmetic_mean([0, 0, 0]), 0)
+
+    def test_non_numeric_values(self):
+        with self.assertRaises(TypeError):
+            arithmetic_mean(["1", "2", "3"])
+
+    def test_nested_list(self):
+        with self.assertRaises(TypeError):
+            arithmetic_mean([[1, 2], [3, 4]])
 
 
 if __name__ == '__main__':
