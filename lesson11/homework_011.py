@@ -29,3 +29,9 @@ def log_event(username: str, status: str):
         logger.warning(log_message)
     else:
         logger.error(log_message)
+
+
+log_event("john_doe", "success")
+log_event("jane_doe", "expired")
+log_event("hacker", "failed")
+log_event("bot", "suspicious")
