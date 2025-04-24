@@ -2,7 +2,6 @@ import unittest
 from homework_011 import log_event
 import logging
 
-
 class TestLogEvent(unittest.TestCase):
 
     def test_success_logs_info(self):
@@ -20,10 +19,21 @@ class TestLogEvent(unittest.TestCase):
             log_event("john_doe", "failed")
             self.assertIn("ERROR:log_event:Login event - Username: john_doe, Status: failed", log.output)
 
-    def test_unknown_status_logs_error(self):
-        with self.assertLogs('log_event', level='ERROR') as log:
+    def test_unknown_status_raises_assertion(self):
+        with self.assertRaises(AssertionError):
             log_event("john_doe", "unknown_status")
-            self.assertIn("ERROR:log_event:Login event - Username: john_doe, Status: unknown_status", log.output)
+
+    def test_empty_username_raises_assertion(self):
+        with self.assertRaises(AssertionError):
+            log_event("", "success")
+
+    def test_non_string_username_raises_assertion(self):
+        with self.assertRaises(AssertionError):
+            log_event(123, "success")
+
+    def test_invalid_status_raises_assertion(self):
+        with self.assertRaises(AssertionError):
+            log_event("john_doe", "not_valid_status")
 
 
 if __name__ == '__main__':

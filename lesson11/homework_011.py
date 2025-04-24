@@ -12,6 +12,10 @@ def log_event(username: str, status: str):
     * expired - пароль застаріває і його слід замінити, логується на рівні warning
     * failed  - пароль невірний, логується на рівні error
     """
+
+    assert isinstance(username, str) and username.strip(), "username має бути непорожнім рядком"
+    assert status in ["success", "expired", "failed", "suspicious"], "status має бути одним з дозволених значень"
+
     log_message = f"Login event - Username: {username}, Status: {status}"
 
     # Створення та налаштування логера
@@ -31,7 +35,8 @@ def log_event(username: str, status: str):
         logger.error(log_message)
 
 
-log_event("john_doe", "success")
-log_event("jane_doe", "expired")
-log_event("hacker", "failed")
-log_event("bot", "suspicious")
+if __name__ == "__main__":
+    log_event("john_doe", "success")
+    log_event("jane_doe", "expired")
+    log_event("hacker", "failed")
+    log_event("bot", "suspicious")
