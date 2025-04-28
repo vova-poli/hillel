@@ -1,0 +1,4 @@
+2025-04-24 21:11:11,516 - Login event - Username: john_doe, Status: success
+2025-04-24 21:11:11,516 - Login event - Username: jane_doe, Status: expired
+2025-04-24 21:11:11,517 - Login event - Username: hacker, Status: failed
+2025-04-24 21:11:11,517 - Login event - Username: bot, Status: suspicious
