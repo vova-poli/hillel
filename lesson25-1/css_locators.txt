@@ -1,0 +1,25 @@
+1. button:contains("Sign In")       /* Selenium не підтримує contains в CSS, лише псевдоелементи */
+2. input[placeholder='Email']
+3. input[type='password'][placeholder='Password']
+4. label:contains('Email') + input
+5. form#loginForm button[type='submit']
+6. a[href='/panel/garage']
+7. .garage h3
+8. .car-item button
+9. .car-item button:contains('Edit')
+10. button:contains('Add car')
+11. .modal-content input[name='brand']
+12. .modal-content input[name='model']
+13. select[formcontrolname='mileageType']
+14. select option[value='km']
+15. form button:contains('Add')
+16. .modal-content button:contains('Cancel')
+17. .user-block span
+18. a:contains('Settings')
+19. .sidebar a[href='/panel/settings']
+20. button.btn.btn-outline-danger
+21. h1:contains('Garage')
+22. h2:contains('Welcome')
+23. nav ul li a[href='/panel/garage']
+24. .car-item:first-of-type button:contains('Delete')
+25. .garage-item h3
